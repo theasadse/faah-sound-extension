@@ -1,18 +1,41 @@
 {
     "name": "faah-terminal-error",
-    "displayName": "Faah Sound on Terminal Error",
-    "description": "Plays a 'faah!' sound whenever a terminal command fails (exit code is non-zero).",
-    "version": "0.1.0",
+    "displayName": "Faah Sound: Audio Fail Notification for Terminal Errors",
+    "description": "Instant audio notification for VS Code terminal. Plays the hilarious 'faah!' sound effect immediately whenever a command fails (non-zero exit code).",
+    "version": "0.1.1",
     "publisher": "asadullah",
+    "icon": "icon.png",
+    "galleryBanner": {
+        "color": "#121217",
+        "theme": "dark"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/theasadse/faah-sound-extension"
     },
+    "bugs": {
+        "url": "https://github.com/theasadse/faah-sound-extension/issues"
+    },
+    "homepage": "https://github.com/theasadse/faah-sound-extension#readme",
     "engines": {
         "vscode": "^1.90.0"
     },
     "categories": [
         "Other"
+    ],
+    "keywords": [
+        "sound",
+        "audio",
+        "fail",
+        "terminal",
+        "error",
+        "command",
+        "notification",
+        "faah",
+        "faaah",
+        "myinstants",
+        "funny",
+        "exit code"
     ],
     "activationEvents": [
         "onStartupFinished"
