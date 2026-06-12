@@ -1,0 +1,62 @@
+{
+    "name": "faah-terminal-error",
+    "displayName": "Faah Sound on Terminal Error",
+    "description": "Plays a 'faah!' sound whenever a terminal command fails (exit code is non-zero).",
+    "version": "0.1.0",
+    "publisher": "asadullah",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/theasadse/faah-sound-extension"
+    },
+    "engines": {
+        "vscode": "^1.90.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "main": "./dist/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "faah-terminal-error.playTestSound",
+                "title": "Faah Sound: Play Test Sound"
+            }
+        ],
+        "configuration": {
+            "title": "Faah Sound",
+            "properties": {
+                "faahSound.enabled": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Enable playing the 'faah' sound on terminal command failures."
+                },
+                "faahSound.customSoundPath": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Absolute path to a custom sound file (.mp3, .wav, .aiff) to play. Leave empty to use the default 'faaah.mp3'."
+                },
+                "faahSound.cooldownMs": {
+                    "type": "integer",
+                    "default": 1000,
+                    "description": "Cooldown in milliseconds to prevent playing the sound multiple times if errors happen in rapid succession."
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run package",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "package": "esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --minify",
+        "watch-esbuild": "esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --watch"
+    },
+    "devDependencies": {
+        "@types/node": "^20.0.0",
+        "@types/vscode": "^1.90.0",
+        "esbuild": "^0.20.0",
+        "typescript": "^5.0.0"
+    }
+}
